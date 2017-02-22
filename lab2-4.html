@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script>
+    
+        function solve() {
+
+			var array = [1,2,3,4,5];           
+			var x = 0, n =3;
+			document.getElementById('massiv1').innerHTML= 'Первый массив: ' + array;
+			for (var i = 0; i<array.length; i++){
+    			if (array[i]==n){
+    				array.splice(n,1);
+    				
+    			} 
+    
+			}
+
+			document.getElementById('massiv2').innerHTML= 'Измененный массив: ' + array;
+		   
+    	}
+
+		
+</script>
 
     </head>
     <body>
-      
-<script>
-    
-var array = [1,2,3,4,5];           
-var x = 9, n =1;
-document.write("first array: ", array);
-for (var i = 0; i<array.length; i++){
-    if (array[i]==n){
-    array.splice(n,0,x);
-    } 
-    
-}
-document.write("<br>new array: ",array);
-</script>
+      <input type="button" value="Расчитать" onclick="solve()" />
+		<br>
+		<span style='color:blue' id='massiv1'></span>
+		<br>
+		<span style='color:red' id='massiv2'></span>
+		<br>
 
     </body>
 </html>
