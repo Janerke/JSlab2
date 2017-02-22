@@ -1,39 +1,92 @@
-<!DOCTYPE html>
 <html>
-    <head>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript">
+		
 
-        <meta charset="UTF-8">
-        <title>LAB2-1,2,3</title>
+	    function solve() {
 
-    </head>
-    <body>
-      
-<script>
-    
-var array = [];           
-var random,sum = 0;          
+			var array = [];           
+			var random = 0;          
 
-while (array.length <= 4) {
-    random = Math.floor(Math.random() * 50); 
-       array.push(random);         
- }
-document.write("Array: ",array);
+		while (array.length <= 4) {
+    		random = Math.floor(Math.random() * 50); 
+      		 array.push(random);         
+ 		}
+			document.getElementById('massiv1').innerHTML= 'Массив: ' + array;
 
-var minimum = array[0];
-var maximum = array[0];
-for (var i = 0; i<array.length; i++){
-    if(minimum > array[i]){
-        minimum = array[i];
-    } else if(maximum < array[i]){
-        maximum = array[i] ;
-    }
-    if (array[i]%2==0){
-        sum += array[i];
-    }
-}
-document.write("<br>min: ",minimum,"<br>max: ",maximum,"<br>Even sum: ",sum);
-</script>
+		var minimum = array[0];
+		for (var i = 0; i<array.length; i++){
+  			 if(minimum > array[i]){
+      		  minimum = array[i];
+    		} 	
+		}
+			document.getElementById('min1').innerHTML='Min = ' + minimum;
+		   
+    	}
 
-    </body>
+    	function solve1() {
+    		var array = [];           
+			var random = 0;          
+
+		while (array.length <= 4) {
+    		random = Math.floor(Math.random() * 50); 
+      		 array.push(random); 
+      	}
+        	document.getElementById('massiv2').innerHTML='Массив:' + array;  
+
+      		 var maximum = array[0];
+      		 for (var i = 0; i<array.length; i++){
+      		 	if(maximum < array[i]){
+     			   maximum = array[i] ;
+    			}
+ 			 }
+ 			document.getElementById('max1').innerHTML='Max = ' + maximum;
+    	}
+
+    	function solve2(){
+    		var array = [];           
+			var random,sum = 0;          
+
+		while (array.length <= 4) {
+    		random = Math.floor(Math.random() * 50); 
+      		 array.push(random); 
+      	}
+      		 document.getElementById('massiv3').innerHTML='Массив:' + array;
+      		 for (var i = 0; i<array.length; i++){
+      		 	if (array[i]%2==0){
+        			sum += array[i];
+   		 		}		
+      		 }
+      		 document.getElementById('sum1').innerHTML='Even Sum = ' + sum;
+    	}
+	</script>
+</head>
+<body>
+	<form>
+		<input type="button" value="Расчитать минимум" onclick="solve()" />
+		<br>
+		<span style='color:blue' id='massiv1'></span>
+		<br>
+		<span style='color:red' id='min1'></span>
+		<br>
+		----------------------------------------------------
+		<br>
+		<input type="button" value="Расчитать максимум" onclick="solve1()" />
+		<br>
+		<span style='color:blue' id='massiv2'></span>
+		<br>
+		<span style='color:red' id='max1'></span>
+		<br>
+		----------------------------------------------------
+		<br>
+		<input type="button" value="Расчитать Even Sum" onclick="solve2()" />
+		<br>
+		<span style='color:blue' id='massiv3'></span>
+		<br>
+		<span style='color:red' id='sum1'></span>
+		<br>
+		____________________________________________________
+	</form>
+</body>
 </html>
-
